@@ -81,6 +81,9 @@ contract KTBToken is ERC20, Ownable {
 
         _isExcludedFromFee[_msgSender()] = true;
         _isExcludedFromFee[address(this)] = true;
+        _isExcludedFromFee[deadAddress] = true;
+        _isExcludedFromFee[nftsDivAddress] = true;
+        _isExcludedFromFee[fundsAddress] = true;
     }
 
     function decimals() public view virtual override returns (uint8) {
